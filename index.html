@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TaskFlow</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <!-- Replace ca-pub-XXXXXXXXXXXXXXXX with your AdSense publisher ID -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -46,7 +48,7 @@
   .app {
     max-width: 860px;
     margin: 0 auto;
-    padding: 40px 24px 120px;
+    padding: 40px 24px 160px;
   }
 
   .app-header {
@@ -421,6 +423,17 @@
 
 <!-- Hidden file input for import -->
 <input type="file" id="fileImport" accept=".json" style="display:none" onchange="handleImport(event)">
+
+<!-- AdSense banner — replace ca-pub-XXXXXXXXXXXXXXXX and data-ad-slot with your values -->
+<div style="position:fixed;bottom:0;left:0;right:0;background:#0f0f0f;border-top:1px solid #2a2a2a;padding:6px;text-align:center;z-index:500;">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="XXXXXXXXXX"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
 
 <script>
 // ── Data ────────────────────────────────────────────────────────────────────
