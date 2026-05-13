@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TaskFlow</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <meta name="google-adsense-account" content="ca-pub-9433166705079125">
+  <!-- Replace ca-pub-XXXXXXXXXXXXXXXX with your AdSense publisher ID -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -379,6 +380,62 @@
     .detail-grid { grid-template-columns: 1fr; }
     .task-badges { display: none; }
   }
+
+  /* ── Feature section ── */
+  .features-section {
+    margin-top: 64px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+  }
+  .features-heading {
+    font-size: 11px;
+    font-family: 'DM Mono', monospace;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 24px;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  @media (max-width: 640px) {
+    .features-grid { grid-template-columns: 1fr; }
+  }
+  .feature-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius2);
+    padding: 20px;
+  }
+  .feature-icon { font-size: 22px; margin-bottom: 10px; display: block; }
+  .feature-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+  .feature-desc { font-size: 12px; color: var(--text2); line-height: 1.6; }
+  .feature-desc strong { color: var(--accent); font-weight: 600; }
+  .about-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius2);
+    padding: 24px;
+    margin-bottom: 40px;
+  }
+  .about-title { font-size: 15px; font-weight: 700; margin-bottom: 10px; }
+  .about-body { font-size: 13px; color: var(--text2); line-height: 1.7; max-width: 640px; }
+  .about-body p + p { margin-top: 10px; }
+  .shortcut-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  .shortcut { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text2); }
+  kbd {
+    background: var(--surface3);
+    border: 1px solid var(--border2);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--text);
+  }
+  .site-footer { font-size: 11px; color: var(--text3); font-family: 'DM Mono', monospace; text-align: center; padding-bottom: 16px; }
 </style>
 </head>
 <body>
@@ -403,6 +460,62 @@
     <strong>No projects yet</strong>
     Type a project name above and hit Enter to get started.
   </div>
+
+  <!-- Feature & info section -->
+  <section class="features-section">
+    <div class="features-heading">What makes TaskFlow different</div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="feature-icon">💾</span>
+        <div class="feature-title">Saves automatically, locally</div>
+        <p class="feature-desc">Every change you make is saved instantly to your browser's <strong>localStorage</strong>. No account, no server, no sync delay. Your tasks are there when you come back — even after closing the tab.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📂</span>
+        <div class="feature-title">Nested tasks &amp; mini-projects</div>
+        <p class="feature-desc">Every task can hold <strong>subtasks</strong>, turning any item into its own mini-project. Organize work at three levels — Projects, Tasks, and Subtasks — without switching tools or views.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📦</span>
+        <div class="feature-title">Portable with one click</div>
+        <p class="feature-desc">Hit <strong>Export</strong> to download your entire workspace as a JSON file. Move it to another device, back it up to a drive, or import it back anytime. Your data is always yours — no lock-in.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🏷️</span>
+        <div class="feature-title">Tags, priority &amp; due dates</div>
+        <p class="feature-desc">Each task supports <strong>status columns</strong> (To Do, In Progress, Done, Blocked), priority levels, due dates with overdue highlighting, custom tags, and freeform notes.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🔒</span>
+        <div class="feature-title">Completely private</div>
+        <p class="feature-desc">TaskFlow runs entirely in your browser. <strong>Nothing is sent to a server.</strong> No analytics, no telemetry, no third-party data access. Just a file on GitHub Pages doing exactly what it looks like.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">⚡</span>
+        <div class="feature-title">One file, anywhere</div>
+        <p class="feature-desc">TaskFlow is a <strong>single HTML file</strong> with no build step and no dependencies. Save it to your desktop, host it on GitHub Pages, drop it on a USB drive — it works the same everywhere.</p>
+      </div>
+    </div>
+
+    <div class="about-section">
+      <div class="about-title">How to use TaskFlow</div>
+      <div class="about-body">
+        <p>Create a <strong>project</strong> by typing a name in the bar at the top and pressing Enter. Inside each project, add tasks the same way. Click the <strong>⋯</strong> button on any task to open its detail panel — that's where you set status, priority, due date, tags, and notes.</p>
+        <p>Tasks support one level of <strong>subtasks</strong>. Hover a task and click the <strong>+</strong> button to add one, or click the arrow toggle to expand and collapse. Double-click any task or project name to rename it inline.</p>
+        <p>Use <strong>Export</strong> in the top-right to save your data as a JSON file, and <strong>Import</strong> to restore it. This is how you move your workspace between devices or keep a backup.</p>
+        <div class="shortcut-list">
+          <div class="shortcut"><kbd>Enter</kbd> <span>Add project or task</span></div>
+          <div class="shortcut"><kbd>Ctrl N</kbd> <span>Focus new project field</span></div>
+          <div class="shortcut"><kbd>Esc</kbd> <span>Close dialogs</span></div>
+          <div class="shortcut"><kbd>dbl-click</kbd> <span>Rename inline</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer">TaskFlow · a single-file task manager · data stays in your browser</div>
+  </section>
+
 </div>
 
 <!-- Delete confirm modal -->
@@ -423,11 +536,12 @@
 <!-- Hidden file input for import -->
 <input type="file" id="fileImport" accept=".json" style="display:none" onchange="handleImport(event)">
 
+<!-- AdSense banner — replace ca-pub-XXXXXXXXXXXXXXXX and data-ad-slot with your values -->
 <div style="position:fixed;bottom:0;left:0;right:0;background:#0f0f0f;border-top:1px solid #2a2a2a;padding:6px;text-align:center;z-index:500;">
   <ins class="adsbygoogle"
        style="display:block"
-       data-ad-client="ca-pub-9433166705079125"
-       data-ad-slot="9433166705079125"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="XXXXXXXXXX"
        data-ad-format="auto"
        data-full-width-responsive="true"></ins>
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
